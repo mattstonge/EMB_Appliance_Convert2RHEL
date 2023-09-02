@@ -39,3 +39,65 @@ MYEMBABCKUPDIR = ""
 # log entry prefix 
 EMBLOGGERPREF = "[EMB_APP_CONV2RHEL]"
 
+# list of services/sockets to STOP prior to operations (example: "httpd.service cockpit.socket mariadb.service")
+MYSVCLIST = ""
+
+
+
+#######################################################
+#
+#  Functions
+# 
+#
+#######################################################
+
+function prepit1()
+{
+    
+    MYOUTPUT = "$EMBLOGGERPREF Initiating RHEL conversion operations" 
+    cat $MYOUTPUT
+    cat $MYOUTPUT | logger
+    prepit2
+
+}
+
+
+function prepit2()
+{
+
+    MYOUTPUT = "$EMBLOGGERPREF Stopping Services & Sockets" 
+    cat $MYOUTPUT
+    cat $MYOUTPUT | logger
+
+
+}
+
+
+function backitup()
+{
+
+    MYOUTPUT = "$EMBLOGGERPREF backing up critical files" 
+    cat $MYOUTPUT
+    cat $MYOUTPUT | logger
+
+
+
+}
+
+function rhelrepo1()
+{
+
+    MYOUTPUT = "$EMBLOGGERPREF Mounting ISO Image as loopback device" 
+    cat $MYOUTPUT
+    cat $MYOUTPUT | logger
+    mkdir -p /mnt/conv2rhel
+    mount -o loop $EMB_ISO_PATH /mnt/conv2rhel
+    MYOUTPUT = "$EMBLOGGERPREF $(df -h | grep conv2rhel) "
+    cat $MYOUTPUT
+    cat $MYOUTPUT | logger
+
+}
+
+
+
+prepit1
