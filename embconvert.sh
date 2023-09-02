@@ -98,6 +98,24 @@ function rhelrepo1()
 
 }
 
+function newkernel()
+{
+    MYOUTPUT = "$EMBLOGGERPREF Installing a RHEL kernel and bootloader" 
+    cat $MYOUTPUT
+    cat $MYOUTPUT | logger
+    # this will require modification based upon your ISO
+    cd /mnt/conv2rhel/BaseOS/Packages
+    MYOUTPUT = "$EMBLOGGERPREF $(pwd)" 
+    cat $MYOUTPUT
+    cat $MYOUTPUT | logger
+    
+    # force the kernel isntall
+    rpm -ify kernel grub2* grubby*
+    MYOUTPUT = "$(rpm -qa | grep kernel )"
+    cat $MYOUTPUT
+    cat $MYOUTPUT | logger
 
+
+}
 
 prepit1
