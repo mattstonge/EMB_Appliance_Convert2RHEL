@@ -19,7 +19,7 @@
 #######################################################
 
 # directory location where the tarball is extracted to
-EMB_TOOL_PATH = ""
+EMB_TOOL_PATH = "x"
 
 # path to the RHEL ISO
 EMB_ISO_PATH = ""
