@@ -21,6 +21,9 @@
 # directory location where the tarball is extracted to
 EMB_TOOL_PATH = "x"
 
+# name of my config file
+EMB_CONF_FILE = "myappX.conf"
+
 # path to the RHEL ISO
 EMB_ISO_PATH = ""
 
