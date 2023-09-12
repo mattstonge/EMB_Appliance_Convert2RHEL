@@ -20,7 +20,7 @@ EMB_CONF_FILE=myappX.conf
 
 function prepit1()
 {
-  source ./myappX.conf
+  source $EMB_CONF_FILE
   MYOUTPUT="$EMBLOGGERPREF Initiating RHEL conversion operations" 
   echo $MYOUTPUT
   echo $MYOUTPUT | logger
@@ -35,6 +35,12 @@ function prepit2()
   MYOUTPUT="$EMBLOGGERPREF Stopping Services & Sockets" 
   echo $MYOUTPUT
   echo $MYOUTPUT | logger
+
+  for MYSVC in $MYSVCLIST; do
+	  echo "Stopping $MYSVC"
+	  echo "$EMBLOGGERPREF  Stopping $MYSVC" | logger
+	  systemctl stop $MYSVC
+  done
 
 
 }
