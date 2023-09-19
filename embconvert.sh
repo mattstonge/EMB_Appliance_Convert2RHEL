@@ -37,26 +37,29 @@ function prepit1()
 	echo " $EMB_CONF_FILE "
 	echo " "
 	echo " "
-
+	
+	date '+%T'
   source $EMB_CONF_FILE
   MYOUTPUT="$EMBLOGGERPREF Initiating RHEL conversion operations" 
   echo $MYOUTPUT
   echo $MYOUTPUT | logger
-  #prepit2
+  prepit2
 
 }
 
 
 function prepit2()
 {
-
+	
+	date '+%T'
   MYOUTPUT="$EMBLOGGERPREF Stopping Services & Sockets" 
   echo $MYOUTPUT
   echo $MYOUTPUT | logger
 
   for MYSVC in $MYSVCLIST; do
-	  echo "Stopping $MYSVC"
+		date '+%T'
 	  echo "$EMBLOGGERPREF  Stopping $MYSVC" | logger
+	  echo "Stopping $MYSVC"
 	  systemctl stop $MYSVC
   done
 
@@ -67,6 +70,7 @@ function prepit2()
 function backitup()
 {
 
+	date '+%T'
   MYOUTPUT="$EMBLOGGERPREF backing up critical files" 
   echo $MYOUTPUT
   echo $MYOUTPUT | logger
@@ -77,13 +81,14 @@ function backitup()
 
 function rhelrepo1()
 {
-
+	date '+%T'
   MYOUTPUT="$EMBLOGGERPREF Mounting ISO Image as loopback device" 
   echo $MYOUTPUT
   echo $MYOUTPUT | logger
   mkdir -p /mnt/conv2rhel
   mount -o loop $EMB_ISO_PATH /mnt/conv2rhel
   MYOUTPUT="$EMBLOGGERPREF $(df -h | grep conv2rhel) "
+	date '+%T'
   echo $MYOUTPUT
   echo $MYOUTPUT | logger
 
@@ -92,17 +97,20 @@ function rhelrepo1()
 function newkernel()
 {
   MYOUTPUT="$EMBLOGGERPREF Installing a RHEL kernel and bootloader" 
+	date '+%T'
   echo $MYOUTPUT
   echo $MYOUTPUT | logger
   # this will require modification based upon your ISO
   cd /mnt/conv2rhel/BaseOS/Packages
   MYOUTPUT="$EMBLOGGERPREF $(pwd)" 
+	date '+%T'
   echo $MYOUTPUT
   echo $MYOUTPUT | logger
    
   # force the kernel isntall
   rpm -ify kernel grub2* grubby*
   MYOUTPUT="$(rpm -qa | grep kernel )"
+	date '+%T'
   echo $MYOUTPUT
   echo $MYOUTPUT | logger
 
