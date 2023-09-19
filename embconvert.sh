@@ -20,11 +20,29 @@ EMB_CONF_FILE=myappX.conf
 
 function prepit1()
 {
+  clear
+  echo "###################################"
+  echo "# Embedded Appliance Convert2RHEL #"
+  echo "# A Framework for Positive Change #"
+	echo "#                                 #"
+	echo "# Customization to your           #"
+	echo "# Environment is Required...      #"
+  echo "###################################"
+  echo " "
+  echo " "
+  echo "  MIT License ( https://opensource.org/license/mit/ )"
+  echo " "
+  echo " "
+  echo "...reading your configurtion file: "
+	echo " $EMB_CONF_FILE "
+	echo " "
+	echo " "
+
   source $EMB_CONF_FILE
   MYOUTPUT="$EMBLOGGERPREF Initiating RHEL conversion operations" 
   echo $MYOUTPUT
   echo $MYOUTPUT | logger
-  prepit2
+  #prepit2
 
 }
 
