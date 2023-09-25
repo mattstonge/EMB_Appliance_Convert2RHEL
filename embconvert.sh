@@ -51,11 +51,23 @@ function prepit1()
 function prepit2()
 {
 	
+	pwd
 	date '+%T'
   MYOUTPUT="$EMBLOGGERPREF Stopping Services & Sockets" 
   echo $MYOUTPUT
   echo $MYOUTPUT | logger
+  
+	#determine system status - active services, sockets, etc.
+  
+	systemctl get-default > mydefault.dat
+	systemctl list-units --type=service --state=active > services.dat
+	systemctl list-units --type=socket --state=active > sockets.dat
+	
+	# compare defined to actual
 
+
+
+	# stop services & sockets
   for MYSVC in $MYSVCLIST; do
 		date '+%T'
 	  echo "$EMBLOGGERPREF  Stopping $MYSVC" | logger

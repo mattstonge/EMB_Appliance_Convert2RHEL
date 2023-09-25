@@ -1,0 +1,33 @@
+  UNIT                            LOAD   ACTIVE SUB       DESCRIPTION
+  avahi-daemon.socket             loaded active running   Avahi mDNS/DNS-SD Stack Activation Socket
+  cups.socket                     loaded active running   CUPS Scheduler
+  dbus.socket                     loaded active running   D-Bus System Message Bus Socket
+  dm-event.socket                 loaded active listening Device-mapper event daemon FIFOs
+  iscsid.socket                   loaded active listening Open-iSCSI iscsid Socket
+  iscsiuio.socket                 loaded active listening Open-iSCSI iscsiuio Socket
+  lvm2-lvmpolld.socket            loaded active listening LVM2 poll daemon socket
+  osbuild-composer.socket         loaded active listening OSBuild Composer Weldr API socket
+  rpcbind.socket                  loaded active running   RPCbind Server Activation Socket
+  sssd-kcm.socket                 loaded active running   SSSD Kerberos Cache Manager responder socket
+  systemd-coredump.socket         loaded active listening Process Core Dump Socket
+  systemd-initctl.socket          loaded active listening initctl Compatibility Named Pipe
+  systemd-journald-dev-log.socket loaded active running   Journal Socket (/dev/log)
+  systemd-journald.socket         loaded active running   Journal Socket
+  systemd-rfkill.socket           loaded active listening Load/Save RF Kill Switch Status /dev/rfkill Watch
+  systemd-udevd-control.socket    loaded active running   udev Control Socket
+  systemd-udevd-kernel.socket     loaded active running   udev Kernel Socket
+  virtinterfaced.socket           loaded active listening Libvirt interface local socket
+  virtlockd.socket                loaded active listening Virtual machine lock manager socket
+  virtlogd.socket                 loaded active listening Virtual machine log manager socket
+  virtnetworkd.socket             loaded active listening Libvirt network local socket
+  virtnodedevd.socket             loaded active listening Libvirt nodedev local socket
+  virtproxyd.socket               loaded active listening Libvirt proxy local socket
+  virtqemud-admin.socket          loaded active listening Libvirt qemu admin socket
+  virtqemud-ro.socket             loaded active listening Libvirt qemu local read-only socket
+  virtqemud.socket                loaded active listening Libvirt qemu local socket
+  virtstoraged.socket             loaded active listening Libvirt storage local socket
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+SUB    = The low-level unit activation state, values depend on unit type.
+27 loaded units listed.
