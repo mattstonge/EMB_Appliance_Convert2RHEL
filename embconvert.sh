@@ -60,8 +60,8 @@ function prepit2()
 	#determine system status - active services, sockets, etc.
   
 	systemctl get-default > mydefault.dat
-	systemctl list-units --type=service --state=active > services.dat
-	systemctl list-units --type=socket --state=active > sockets.dat
+	systemctl list-units --type=service --state=active --quiet | cut -d ' ' -f 3 > services.dat
+	systemctl list-units --type=socket --state=active --quiet | cut -d ' ' -f 3 > sockets.dat
 	
 	# compare defined to actual
 

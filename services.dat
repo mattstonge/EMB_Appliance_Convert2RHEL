@@ -1,77 +1,72 @@
-  UNIT                                            LOAD   ACTIVE SUB     DESCRIPTION
-  accounts-daemon.service                         loaded active running Accounts Service
-  alsa-state.service                              loaded active running Manage Sound Card State (restore and store)
-  atd.service                                     loaded active running Deferred execution scheduler
-  auditd.service                                  loaded active running Security Auditing Service
-  avahi-daemon.service                            loaded active running Avahi mDNS/DNS-SD Stack
-  bluetooth.service                               loaded active running Bluetooth service
-  chronyd.service                                 loaded active running NTP client/server
-  colord.service                                  loaded active running Manage, Install and Generate Color Profiles
-  crond.service                                   loaded active running Command Scheduler
-  cups.service                                    loaded active running CUPS Scheduler
-  dbus-broker.service                             loaded active running D-Bus System Message Bus
-  dracut-shutdown.service                         loaded active exited  Restore /run/initramfs on shutdown
-  firewalld.service                               loaded active running firewalld - dynamic firewall daemon
-  gdm.service                                     loaded active running GNOME Display Manager
-  gssproxy.service                                loaded active running GSSAPI Proxy Daemon
-  irqbalance.service                              loaded active running irqbalance daemon
-  kmod-static-nodes.service                       loaded active exited  Create List of Static Device Nodes
-  libstoragemgmt.service                          loaded active running libstoragemgmt plug-in server daemon
-  lm_sensors.service                              loaded active exited  Hardware Monitoring Sensors
-  lvm2-monitor.service                            loaded active exited  Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling
-  mcelog.service                                  loaded active running Machine Check Exception Logging Daemon
-  ModemManager.service                            loaded active running Modem Manager
-  NetworkManager-wait-online.service              loaded active exited  Network Manager Wait Online
-  NetworkManager.service                          loaded active running Network Manager
-  nis-domainname.service                          loaded active exited  Read and set NIS domainname from /etc/sysconfig/network
-  packagekit.service                              loaded active running PackageKit Daemon
-  plymouth-quit-wait.service                      loaded active exited  Hold until boot process finishes up
-  plymouth-read-write.service                     loaded active exited  Tell Plymouth To Write Out Runtime Data
-  plymouth-start.service                          loaded active exited  Show Plymouth Boot Screen
-  pmcd.service                                    loaded active running Performance Metrics Collector Daemon
-  pmie.service                                    loaded active running Performance Metrics Inference Engine
-  pmie_farm.service                               loaded active running pmie farm service
-  pmlogger.service                                loaded active running Performance Metrics Archive Logger
-  pmlogger_farm.service                           loaded active running pmlogger farm service
-  polkit.service                                  loaded active running Authorization Manager
-  power-profiles-daemon.service                   loaded active running Power Profiles daemon
-  rhsm.service                                    loaded active running RHSM dbus service
-  rhsmcertd.service                               loaded active running Enable periodic update of entitlement certificates.
-  rpc-statd-notify.service                        loaded active exited  Notify NFS peers of a restart
-  rpcbind.service                                 loaded active running RPC Bind
-  rsyslog.service                                 loaded active running System Logging Service
-  rtkit-daemon.service                            loaded active running RealtimeKit Scheduling Policy Service
-  smartd.service                                  loaded active running Self Monitoring and Reporting Technology (SMART) Daemon
-  sshd.service                                    loaded active running OpenSSH server daemon
-  sssd-kcm.service                                loaded active running SSSD Kerberos Cache Manager
-  switcheroo-control.service                      loaded active running Switcheroo Control Proxy service
-  sysstat.service                                 loaded active exited  Resets System Activity Logs
-  systemd-backlight@backlight:acpi_video0.service loaded active exited  Load/Save Screen Backlight Brightness of backlight:acpi_video0
-  systemd-boot-update.service                     loaded active exited  Automatic Boot Loader Update
-  systemd-journal-flush.service                   loaded active exited  Flush Journal to Persistent Storage
-  systemd-journald.service                        loaded active running Journal Service
-  systemd-logind.service                          loaded active running User Login Management
-  systemd-machined.service                        loaded active running Virtual Machine and Container Registration Service
-  systemd-modules-load.service                    loaded active exited  Load Kernel Modules
-  systemd-network-generator.service               loaded active exited  Generate network units from Kernel command line
-  systemd-random-seed.service                     loaded active exited  Load/Save Random Seed
-  systemd-remount-fs.service                      loaded active exited  Remount Root and Kernel File Systems
-  systemd-sysctl.service                          loaded active exited  Apply Kernel Variables
-  systemd-tmpfiles-setup-dev.service              loaded active exited  Create Static Device Nodes in /dev
-  systemd-tmpfiles-setup.service                  loaded active exited  Create Volatile Files and Directories
-  systemd-udev-settle.service                     loaded active exited  Wait for udev To Complete Device Initialization
-  systemd-udev-trigger.service                    loaded active exited  Coldplug All udev Devices
-  systemd-udevd.service                           loaded active running Rule-based Manager for Device Events and Files
-  systemd-update-utmp.service                     loaded active exited  Record System Boot/Shutdown in UTMP
-  systemd-user-sessions.service                   loaded active exited  Permit User Sessions
-  systemd-vconsole-setup.service                  loaded active exited  Setup Virtual Console
-  udisks2.service                                 loaded active running Disk Manager
-  upower.service                                  loaded active running Daemon for power management
-  user-runtime-dir@1000.service                   loaded active exited  User Runtime Directory /run/user/1000
-  user@1000.service                               loaded active running User Manager for UID 1000
-  wpa_supplicant.service                          loaded active running WPA supplicant
-
-LOAD   = Reflects whether the unit definition was properly loaded.
-ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
-SUB    = The low-level unit activation state, values depend on unit type.
-71 loaded units listed.
+accounts-daemon.service
+alsa-state.service
+atd.service
+auditd.service
+avahi-daemon.service
+bluetooth.service
+chronyd.service
+colord.service
+crond.service
+cups.service
+dbus-broker.service
+dracut-shutdown.service
+firewalld.service
+gdm.service
+gssproxy.service
+irqbalance.service
+kmod-static-nodes.service
+libstoragemgmt.service
+lm_sensors.service
+lvm2-monitor.service
+mcelog.service
+ModemManager.service
+NetworkManager-wait-online.service
+NetworkManager.service
+nis-domainname.service
+packagekit.service
+plymouth-quit-wait.service
+plymouth-read-write.service
+plymouth-start.service
+pmcd.service
+pmie.service
+pmie_check.service
+pmie_farm.service
+pmlogger.service
+pmlogger_farm.service
+polkit.service
+power-profiles-daemon.service
+rhsm.service
+rhsmcertd.service
+rpc-statd-notify.service
+rpcbind.service
+rsyslog.service
+rtkit-daemon.service
+smartd.service
+sshd.service
+sssd-kcm.service
+switcheroo-control.service
+sysstat.service
+systemd-backlight@backlight:acpi_video0.service
+systemd-boot-update.service
+systemd-journal-flush.service
+systemd-journald.service
+systemd-logind.service
+systemd-machined.service
+systemd-modules-load.service
+systemd-network-generator.service
+systemd-random-seed.service
+systemd-remount-fs.service
+systemd-sysctl.service
+systemd-tmpfiles-setup-dev.service
+systemd-tmpfiles-setup.service
+systemd-udev-settle.service
+systemd-udev-trigger.service
+systemd-udevd.service
+systemd-update-utmp.service
+systemd-user-sessions.service
+systemd-vconsole-setup.service
+udisks2.service
+upower.service
+user-runtime-dir@1000.service
+user@1000.service
+wpa_supplicant.service
