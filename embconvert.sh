@@ -5,6 +5,9 @@
 #
 # MIT License ( https://opensource.org/license/mit/ )
 # 
+# version 1.0
+# #####################################################
+
 
 # name of my config file
 EMB_CONF_FILE=myappX.conf
@@ -47,8 +50,42 @@ function prepit1()
 
 }
 
-
 function prepit2()
+{
+
+  # tests to ensure original OS is as specified
+	# any failure results in an EXIT from this tool
+  
+  date '%T'
+	MYOUTPUT="$EMBLOGGERPREF Validating this system"
+	echo $MYOUTPUT
+	echo $MYOUTPUT | logger
+  
+  case $MYCURRENTOSNAME in
+	  "Rocky")
+		  rockytests
+			;;
+
+		"Alma")
+      almatests
+			;;
+
+	  "CentOS")
+		  centostests
+			;;
+
+		*) 
+		  MYOUTPUT="OS validation has failed - EXITING!!!"
+			exit 0
+			;;
+
+
+}
+
+
+
+
+function prepit3()
 {
 	
 	pwd
