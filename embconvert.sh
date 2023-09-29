@@ -78,6 +78,7 @@ function prepit2()
 		  MYOUTPUT="OS validation has failed - EXITING!!!"
 			exit 0
 			;;
+  esac
 
 
 }
