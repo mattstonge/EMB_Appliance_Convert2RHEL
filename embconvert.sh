@@ -142,10 +142,37 @@ function centostests()
 
    prepit3
 
-
-
 }
 
+function almatests()
+{
+
+  if [ -f /etc/almalinux-release ]
+	then
+	  source /etc/almalinux-release
+		TESTOS="${NAME}"
+		TESTVER="${VERSION_ID}"
+  fi
+
+  if [ "$TESTOS" != "AlmaLinux" ]
+	then
+    MYOUTPUT="$EMBLOGGERPREF OS Settings are not correct - reconfigure then re-run this tool."
+    echo $MYOUTPUT
+    echo $MYOUTPUT | logger
+  	exit 1
+	fi
+
+  if [ "$TESTVER" != "$MYCURRENTOSVER" ]
+	then
+     MYOUTPUT="$EMBLOGGERPREF OS Settings are not correct - reconfigure then re-run this tool."
+     echo $MYOUTPUT
+     echo $MYOUTPUT | logger
+		 exit 1
+	fi
+
+	prepit3
+
+}
 
 
 function prepit3()
