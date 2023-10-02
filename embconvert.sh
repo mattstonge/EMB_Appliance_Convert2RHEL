@@ -83,8 +83,36 @@ function prepit2()
 
 }
 
+function rockytests()
+{
+  # tests to validate OS is Rocky Linux and its version
 
+	if [ -f /etc/os-release ]
+	then
+	  source /etc/os-release
+		TESTOS="${ROCKY_SUPPORT_PRODUCT}"
+    TESTVER="${ROCKY_SUPPORT_PRODUCT_VERSION}"
+  fi
 
+	if [ "$TESTOS" != "Rocky Linux" ]
+	then 
+	  MYOUTPUT="$EMBLOGGERPREF OS Settings are not correct - reconfigure then re-run this tool."
+		echo $MYOUTPUT
+		echo $MYOUTPUT | logger
+	  exit 0
+	fi
+
+  if [ "$TESTVER" != "$MYCUURENTOSVER" ]
+	then
+	  MYOUTPUT="$EMBLOGGERPREF OS Settings are not correct - reconfigure then re-run this tool."
+		echo $MYOUTPUT
+		echo $MYOUTPUT | logger
+		exit 0
+	fi
+
+  prepit3
+
+}
 
 function prepit3()
 {
