@@ -99,7 +99,7 @@ function rockytests()
 	  MYOUTPUT="$EMBLOGGERPREF OS Settings are not correct - reconfigure then re-run this tool."
 		echo $MYOUTPUT
 		echo $MYOUTPUT | logger
-	  exit 0
+	  exit 1
 	fi
 
   if [ "$TESTVER" != "$MYCUURENTOSVER" ]
@@ -107,12 +107,46 @@ function rockytests()
 	  MYOUTPUT="$EMBLOGGERPREF OS Settings are not correct - reconfigure then re-run this tool."
 		echo $MYOUTPUT
 		echo $MYOUTPUT | logger
-		exit 0
+		exit 1
 	fi
 
   prepit3
 
 }
+
+function centostests()
+{
+
+	if [ -f /etc/os-release ]
+  then
+    source /etc/os-release
+		TESTOS="${NAME}"
+		TESTVER="${VERSION_ID}"
+	fi
+
+	 if [ "$TESTOS" != "CentOS Linux" ]
+   then
+     MYOUTPUT="$EMBLOGGERPREF OS Settings are not correct - reconfigure then re-run this tool."
+     echo $MYOUTPUT
+     echo $MYOUTPUT | logger
+     exit 1
+   fi
+
+   if [ "$TESTVER" != "$MYCUURENTOSVER" ]
+   then
+     MYOUTPUT="$EMBLOGGERPREF OS Settings are not correct - reconfigure then re-run this tool."
+     echo $MYOUTPUT
+     echo $MYOUTPUT | logger
+     exit 1
+   fi
+
+   prepit3
+
+
+
+}
+
+
 
 function prepit3()
 {
