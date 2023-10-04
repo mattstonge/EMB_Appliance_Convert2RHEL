@@ -209,10 +209,14 @@ function prepit3()
 function backitup()
 {
 
+  # create a backup of /etc
+  
 	date '+%T'
   MYOUTPUT="$EMBLOGGERPREF backing up critical files" 
   echo $MYOUTPUT
   echo $MYOUTPUT | logger
+
+  tar cvhf $MYEMBBACKUPDIR/mybackup.tar /etc
 
 
 
