@@ -218,9 +218,34 @@ function backitup()
 
   tar cvhf $MYEMBBACKUPDIR/mybackup.tar /etc
 
-
+  myoldrepos
 
 }
+
+
+function myoldrepos()
+{
+
+  # determine existing enabled dnf/yum repositories and disable them
+  
+	date '+%T'
+	MYOUTPUT="$EMBLOGGERPREF Determining active YUM/DNF repositories..."
+	echo $MYOUTPUT
+	echo $MYOUTPUT | logger
+
+	dnf repolist
+  dnf repolist | logger
+
+	MYOUTPUT="$EMBLOGGERPREF Disabling all active YUM/DNF repositories..."
+	echo $MYOUTPUT
+	echo $MYOUTPUT | logger
+
+	dnf config-manager --disable *
+
+	rhelrepo1
+
+}
+
 
 function rhelrepo1()
 {
