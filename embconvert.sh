@@ -223,11 +223,7 @@ function prepit4()
 	rm TMPrpmlist
 	mv TMPrpmlist2 mylegacyrpms
 
-
-
-
-
-
+  backitup
 
 }
 
@@ -311,4 +307,4 @@ function newkernel()
 
 }
 
-prepit4
+prepit1
