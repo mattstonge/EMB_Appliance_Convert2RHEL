@@ -202,6 +202,32 @@ function prepit3()
 	  systemctl stop $MYSVC
   done
 
+  prepit4
+
+}
+
+
+function prepit4()
+{
+
+  date '+%T'
+	MYOUTPUT="$EMBLOGGERPREF Gathering RPM List"
+	echo $MYOUTPUT
+	echo $MYOUTPUT | logger
+
+	dnf list --installed > TMPrpmlist
+	sed '1,2d' TMPrpmlist > TMPrpmlist2
+  awk '{print $1}' TMPrpmlist2 > myrpmlist
+
+  #cleanup
+	rm TMPrpmlist
+	mv TMPrpmlist2 mylegacyrpms
+
+
+
+
+
+
 
 }
 
@@ -285,4 +311,4 @@ function newkernel()
 
 }
 
-prepit1
+prepit4
