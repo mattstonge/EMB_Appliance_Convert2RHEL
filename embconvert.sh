@@ -43,10 +43,19 @@ function prepit1()
 	
 	date '+%T'
   source $EMB_CONF_FILE
+	if [ "$EUID" -ne 0 ]
+		then echo "This tool must be run as ROOT..."
+		exit 
+	fi
+
+
+
+
   MYOUTPUT="$EMBLOGGERPREF Initiating RHEL conversion operations" 
   echo $MYOUTPUT
   echo $MYOUTPUT | logger
-  prepit2
+  
+	# prepit2
 
 }
 
