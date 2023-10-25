@@ -23,7 +23,7 @@ Here's a general outline...
 ###   mounting new RHEL X.X loopback iso as a repo
 ###   forced intallation of new kernel/kernael tools/bootloader
 ## Conversion PHASE II
-###   foreced replacement of existing comparable rpms
+###   forced replacement of existing comparable rpms
 ## Cleanup & Config PHASE III
 ###   removal of loopback repo
 ###   installation of partner update methodology (repo/etc)
