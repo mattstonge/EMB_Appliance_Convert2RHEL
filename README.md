@@ -22,7 +22,7 @@ Here's a general outline...
 ###   scanning of existing packages and repos - genration of package list
 ###   disabling of former repos
 ## Conversion PHASE I
-###   mounting new RHEL X.X loopback iso as a repo
+###   mounting new RHEL X.X loopback ISO as repo(s)
 ###   forced intallation of new kernel/kernael tools/bootloader
 ## Conversion PHASE II
 ###   forced replacement of existing comparable rpms
