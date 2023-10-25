@@ -282,7 +282,61 @@ function rhelrepo1()
   echo $MYOUTPUT
   echo $MYOUTPUT | logger
 
+
+	rhelrepo2
+
 }
+
+
+function rhelrepo2()
+{ 
+	date '+%T'
+	MYOUTPUT="$EMBLOGGERPREF Defining TEMP RHEL Repos"
+	echo $MYOUTPUT
+	echo $MYOUTPUT | logger
+
+	case $MYRHELVER in
+		
+		7.9)
+			# 
+			#
+			#
+			#
+			#
+			#
+			#
+			;;
+
+		8.*)
+			#
+			#
+			#
+			;;
+
+		9.*)
+			#
+			#
+			#
+			;;
+
+		*)
+			#
+			MYOUPUT="$EMBLOGGERPREF RHEL Version ERROR - CHECK YOUR CONFIG"
+			exit 0
+			;;
+	
+	esac
+
+  MYOUTPUT="$EMBLOGGERPREF Listing TEMP RHEL Repos"
+  echo $MYOUTPUT
+  echo $MYOUTPUT | logger	
+	dnf repolist
+	dnf repolist | logger
+
+	newkernel
+
+}
+
 
 function newkernel()
 {
@@ -291,8 +345,8 @@ function newkernel()
   echo $MYOUTPUT
   echo $MYOUTPUT | logger
   # this will require modification based upon your ISO
-  cd /mnt/conv2rhel/BaseOS/Packages
-  MYOUTPUT="$EMBLOGGERPREF $(pwd)" 
+  cd $EMB_TOOL_PATH
+	MYOUTPUT="$EMBLOGGERPREF $(pwd)" 
 	date '+%T'
   echo $MYOUTPUT
   echo $MYOUTPUT | logger
