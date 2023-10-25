@@ -16,6 +16,8 @@ Here's a general outline...
 
 ## Prep PHASE 0
 ###   definition of place to store backup data
+###		OS versions and variable configuration tests
+###		permissions, ISO location, and readiness tests 
 ###   backup of critical configuration data
 ###   scanning of existing packages and repos - genration of package list
 ###   disabling of former repos
